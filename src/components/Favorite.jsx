@@ -9,7 +9,9 @@ export const Favorite = ({ element, type }) => {
   return (
     <div className="d-flex justify-content-between">
       <Link to={`/${type}/${element.uid}`}>
-        <span className="text-decoration-none text-white">{element.name}</span>
+        <span className="text-decoration-none text-white">
+          {element.properties.name}
+        </span>
       </Link>
       <button
         className="btn btn-danger"
