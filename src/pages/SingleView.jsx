@@ -20,7 +20,9 @@ export const SingleView = () => {
 
   return (
     <div className="container text-center text-light">
-      <h1 className="mt-4">{element.name}</h1>
+      <h1 className="mt-4">
+        <strong>{element.name}</strong>
+      </h1>
       <div className="row mt-5">
         <div className="my-auto col text-start">
           {Object.entries(element)
@@ -37,7 +39,9 @@ export const SingleView = () => {
             )
             .map(([key, value]) => (
               <div key={key} className="mb-2">
-                <strong>{key}:</strong> {String(value)}
+                <h3>
+                  <strong>{key}:</strong> {String(value)}
+                </h3>
               </div>
             ))}
         </div>
