@@ -34,31 +34,31 @@ export const Navbar = () => {
                 Favorites
               </div>
               <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                <li>People</li>
+                <li><strong>People</strong></li>
                 {store.favorites.people.map((element) => (
                   <li key={`favorite-people-${element.uid}`}>
                     <Favorite element={element} type="people" />
                   </li>
                 ))}
-                <li>Planets</li>
+                <li><strong>Planets</strong></li>
                 {store.favorites.planets.map((element) => (
                   <li key={`favorite-planets-${element.uid}`}>
                     <Favorite element={element} type="planets" />
                   </li>
                 ))}
-                <li>Vehicles</li>
+                <li><strong>Vehicles</strong></li>
                 {store.favorites.vehicles.map((element) => (
                   <li key={`favorite-vehicles-${element.uid}`}>
                     <Favorite element={element} type="vehicles" />
                   </li>
                 ))}
-                <li>Species</li>
+                <li><strong>Species</strong></li>
                 {store.favorites.species.map((element) => (
                   <li key={`favorite-species-${element.uid}`}>
                     <Favorite element={element} type="species" />
                   </li>
                 ))}
-                <li>Starships</li>
+                <li><strong>Starships</strong></li>
                 {store.favorites.starships.map((element) => (
                   <li key={`favorite-starships-${element.uid}`}>
                     <Favorite element={element} type="starships" />
