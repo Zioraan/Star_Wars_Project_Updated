@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export const Card = ({ element, type }) => {
   const { store, dispatch } = useGlobalReducer();
@@ -20,17 +20,33 @@ export const Card = ({ element, type }) => {
           <Link to={`/${type}/${element.uid}`} className="btn btn-primary">
             See more
           </Link>
-          <button
-            className="btn btn-warning"
-            onClick={() =>
-              dispatch({
-                type: "toggle_favorite",
-                payload: { type: type, element },
-              })
-            }
-          >
-            <FontAwesomeIcon icon={faStar} />
-          </button>
+          {store.favorites[type].some(
+            (favElement) => favElement.uid === element.uid
+          ) ? (
+            <button
+              className="btn btn-danger"
+              onClick={() =>
+                dispatch({
+                  type: "toggle_favorite",
+                  payload: { type: type, element },
+                })
+              }
+            >
+              <FontAwesomeIcon icon={faTrash} />
+            </button>
+          ) : (
+            <button
+              className="btn btn-warning"
+              onClick={() =>
+                dispatch({
+                  type: "toggle_favorite",
+                  payload: { type: type, element },
+                })
+              }
+            >
+              <FontAwesomeIcon icon={faStar} />
+            </button>
+          )}
         </div>
       </div>
     </div>
