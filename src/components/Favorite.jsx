@@ -7,14 +7,14 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 export const Favorite = ({ element, type }) => {
   const { dispatch } = useGlobalReducer();
   return (
-    <div className="d-flex justify-content-between">
+    <div className="d-flex justify-content-between m-1">
       <Link to={`/${type}/${element.uid}`}>
         <span className="text-decoration-none text-white">
           {element.properties.name}
         </span>
       </Link>
       <button
-        className="btn btn-danger"
+        className="btn btn-danger btn-sm"
         onClick={() =>
           dispatch({
             type: "toggle_favorite",

@@ -47,6 +47,7 @@ export const Carousel = ({ array, type, cardsPerSlide = 4 }) => {
         type="button"
         data-bs-target={"#" + type + "Carousel"}
         data-bs-slide="next"
+         style={{ width: '5%' }}
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
