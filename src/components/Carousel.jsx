@@ -26,9 +26,18 @@ export const Carousel = ({ array, type, cardsPerSlide = 4 }) => {
             key={`slide-${slideIdx}`}
           >
             <div className="d-flex justify-content-center gap-3">
-              {slide.map((element) => (
-                <Card element={element} type={type} key={type + element.uid} />
-              ))}
+              {slide.map(
+                (element) => (
+                  console.log("element", element),
+                  (
+                    <Card
+                      element={element}
+                      type={type}
+                      key={type + element.uid}
+                    />
+                  )
+                )
+              )}
             </div>
           </div>
         ))}

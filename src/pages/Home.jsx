@@ -5,15 +5,14 @@ import { Carousel } from "../components/Carousel.jsx";
 
 export const Home = () => {
   const { store, dispatch } = useGlobalReducer();
-  const { getPeople, getPlanets, getVehicles, getSpecies, getStarships } =
-    useActions();
+  const { getElements } = useActions();
 
   useEffect(() => {
-    getPeople();
-    getPlanets();
-    getVehicles();
-    getSpecies();
-    getStarships();
+    getElements("people");
+    getElements("planets");
+    getElements("vehicles");
+    getElements("species");
+    getElements("starships");
   }, []);
 
   return (
